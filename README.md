@@ -1,5 +1,6 @@
 # infra-scripts
-Scripts e automações para gerenciamento de suporte no dia a dia.
+
+Olá! 👋 Meu nome é Eric e este repositório é parte da minha jornada começando na área de Infraestrutura de TI, onde irei colocar Scripts e automações para gerenciamento de suporte no meu dia a dia.
 
 ## 📂 Estrutura
 - `windows/` → Scripts para ambiente Windows (PowerShell, .bat)
