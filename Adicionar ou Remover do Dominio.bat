@@ -1,5 +1,5 @@
 @echo off
-title Gerenciamento de Dominio
+title Gerenciamento de Dominio v1.2
 color 0A
 
 :MENU
@@ -26,8 +26,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
 goto FIM
 
 :ADICIONAR
-set /p dominio=Digite o dominio (ex: empresa.local): 
-echo --- Adicionando maquina ao dominio ---
+echo --- Adicionando maquina ao dominio --- 
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
 " $resp = Read-Host 'Deseja renomear a maquina antes de entrar no dominio? (S/N)'; ^
   if ($resp -match '^[Ss]$') { ^
@@ -35,7 +34,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
        if (![string]::IsNullOrWhiteSpace($novoNome)) { Rename-Computer -NewName $novoNome -Force; Write-Host 'Nome alterado para' $novoNome -ForegroundColor Cyan } ^
   }; ^
   $cred = Get-Credential -Message 'Digite as credenciais do dominio (ex: DOMINIO\\Administrador)'; ^
-  Add-Computer -DomainName '%dominio%' -Credential $cred -Force; ^
+  Add-Computer -DomainName 'dominio da empresa' -Credential $cred -Force; ^
   $resp2 = Read-Host 'Deseja reiniciar agora? (S/N)'; ^
   if ($resp2 -match '^[Ss]$') { Restart-Computer -Force } else { Write-Host 'Reinicio cancelado.' -ForegroundColor Yellow }"
 goto FIM
