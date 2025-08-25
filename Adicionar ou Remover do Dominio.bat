@@ -1,5 +1,5 @@
 @echo off
-title Gerenciamento de Dominio v1.2
+title Gerenciamento de Dominio
 color 0A
 
 :MENU
@@ -44,3 +44,4 @@ echo.
 echo Operacao concluida.
 pause
 exit
+
